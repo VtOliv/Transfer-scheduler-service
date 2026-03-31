@@ -24,12 +24,12 @@ public class TransferService {
     public Transfer scheduleTransfer(TransferDTO dto) {
         validateBusinessRules(dto);
 
-        LocalDate schedulingDate = LocalDate.now();
-        long days = ChronoUnit.DAYS.between(schedulingDate, dto.getTransferDate());
+        var schedulingDate = LocalDate.now();
+        var days = ChronoUnit.DAYS.between(schedulingDate, dto.getTransferDate());
 
-        BigDecimal fee = calculateFee(dto.getAmount(), days);
+        var fee = calculateFee(dto.getAmount(), days);
 
-        Transfer transfer = Transfer.builder()
+        var transfer = Transfer.builder()
                 .sourceAccount(dto.getSourceAccount())
                 .destinationAccount(dto.getDestinationAccount())
                 .amount(dto.getAmount())
