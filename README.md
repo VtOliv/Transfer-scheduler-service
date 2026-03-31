@@ -46,9 +46,9 @@ Console disponível em:
     http://localhost:8097/h2-console
 
 ### Configuração:
-- JDBC URL: jdbc:h2:mem:transferdb
-- User: sa
-- Password: (vazio)
+- JDBC URL: jdbc:h2:mem:dbtransfers
+- User: root
+- Password: root
 
 ---
 
