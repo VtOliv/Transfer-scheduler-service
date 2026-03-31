@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 import com.bank.transfers.domain.Transfer;
 import com.bank.transfers.domain.TransferDTO;
 import com.bank.transfers.exception.FeeNotFoundException;
+import com.bank.transfers.exception.InvallidAccountException;
 import com.bank.transfers.repository.TransferRepository;
 
 import lombok.RequiredArgsConstructor;
@@ -46,7 +47,7 @@ public class TransferService {
 
     private void validateBusinessRules(TransferDTO dto) {
         if (dto.getSourceAccount().equals(dto.getDestinationAccount())) {
-            throw new IllegalArgumentException("A conta de origem deve ser diferente da conta de destino.");
+            throw new InvallidAccountException();
         }
     }
 
